@@ -19,11 +19,11 @@ def expand_shadow_element(element):
     return shadow_root
 
 url = "https://www.virustotal.com/gui/ip-address/"
-df = pd.read_csv(r"C:\Users\Toy\Desktop\Python\aoi\1601866252_47450.csv")
+df = pd.read_csv(r"C:\Users\1601866252_47450.csv")
 df_new = df[df['RemoteAddressIP4'].notnull()]
 mydata = list(df_new.iloc[:, 23])
 
-f = open(r"C:\Users\Toy\Desktop\Python\aoi\ip.txt", "w", encoding="utf-8")
+f = open(r"C:\Users\ip.txt", "w", encoding="utf-8")
 for ip in mydata:
     t = ip.split()
     #s = t.split("[")[1].split("]")[0]
@@ -47,7 +47,7 @@ for ip in mydata:
                 print(t[i])
                 browser.close()
                 browser.quit()
-                l = open("C:\\Users\\Toy\\Desktop\\Python\\aoi\\remoteip_" + time.strftime('%Y_%m_%d') + ".txt", "a", encoding="utf-8")
+                l = open("C:\\Users\\remoteip_" + time.strftime('%Y_%m_%d') + ".txt", "a", encoding="utf-8")
                 l.write(t[i] + "：trouble\n")
                 l.close()
                 time.sleep(5)
@@ -55,7 +55,7 @@ for ip in mydata:
                 print("YA~")
                 browser.close()
                 browser.quit()
-                l = open("C:\\Users\\Toy\\Desktop\\Python\\aoi\\remoteip_" + time.strftime('%Y_%m_%d') + ".txt", "a", encoding="utf-8")
+                l = open("C:\\Users\\remoteip_" + time.strftime('%Y_%m_%d') + ".txt", "a", encoding="utf-8")
                 l.write(t[i] + "：No problem\n")
                 l.close()
                 time.sleep(5)
